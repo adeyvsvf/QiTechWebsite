@@ -194,11 +194,11 @@ nav .flex-shrink-0 img {
 
 @media (max-width: 768px) {
     nav .flex-shrink-0 img {
-        height: 6rem !important; /* Smaller on mobile for better usability */
+        height: 2rem !important; /* Much smaller on mobile for better usability */
     }
-    
+
     nav .container > div {
-        height: 7rem !important; /* Adjust nav height on mobile */
+        height: 4rem !important; /* Adjust nav height on mobile */
     }
 }
 
