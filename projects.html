@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - QiTech | Solar Installation Portfolio</title>
+    <meta name="description" content="Explore QiTech's portfolio of successful solar installations across Nigeria. Residential, commercial, and industrial solar projects showcasing our expertise.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            500: '#eee324',
+                            600: '#d4c41f',
+                            700: '#b8a61c',
+                            800: '#9d8918',
+                            900: '#7a6a14',
+                        },
+                        accent: {
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-900 text-white">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700/20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
+                        <img src="Images/qids.png" alt="QiTech - Premier Solar Solutions" class="h-8 lg:h-12 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">About</a>
+                    <a href="services.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">Services</a>
+                    <a href="projects.html" class="text-white font-medium hover:text-primary-400 transition-colors">Projects</a>
+                    <a href="contact.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">Contact</a>
+                </div>
+                
+                <!-- CTA -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="contact.html" class="px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                        Get Quote
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-3">
+                    <button
+                        id="mobile-menu-button"
+                        class="p-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                        aria-label="Toggle menu"
+                        title="Open menu"
+                    >
+                        <i data-lucide="menu" class="w-5 h-5 text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-gray-900 border-t border-gray-700">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">Home</a>
+                <a href="about.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">About</a>
+                <a href="services.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">Services</a>
+                <a href="projects.html" class="block text-white font-medium py-2">Projects</a>
+                <a href="contact.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">Contact</a>
+                <a href="contact.html" class="block w-full mt-4 px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg text-center transition-colors">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </nav>    
+    <!-- Hero Section -->
+    <section class="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-fade-in">
+                    <span class="text-white">Our Solar</span>
+                    <span class="text-primary-400 block">Success Stories</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto font-light leading-relaxed animate-slide-up">
+                    Explore our portfolio of successful solar installations across Nigeria, from residential homes 
+                    to large commercial and industrial projects.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Filter -->
+    <section class="py-8 bg-gray-900 border-b border-gray-700">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn px-6 py-2 rounded-lg font-medium transition-colors bg-primary-600 text-white" data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-lg font-medium transition-colors bg-gray-800 text-gray-300 hover:bg-gray-700" data-filter="residential">
+                    Residential
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-lg font-medium transition-colors bg-gray-800 text-gray-300 hover:bg-gray-700" data-filter="commercial">
+                    Commercial
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-lg font-medium transition-colors bg-gray-800 text-gray-300 hover:bg-gray-700" data-filter="industrial">
+                    Industrial
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Grid -->
+    <section class="py-16 lg:py-24 bg-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 - Residential -->
+                <div class="project-card residential bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-primary-400 to-primary-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">
+                                Residential
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="text-sm font-medium">15kW System</div>
+                            <div class="text-xs opacity-90">Lagos, Nigeria</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-semibold text-white mb-2">Modern Villa Solar Installation</h3>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                            Complete residential solar system with battery backup, reducing electricity bills by 85% for a family of six.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-400">
+                                <i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>
+                                Completed: Dec 2024
+                            </div>
+                            <a href="contact.html" class="text-primary-400 font-medium hover:underline text-sm">
+                                Get Similar Quote →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Commercial -->
+                <div class="project-card commercial bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-accent-400 to-accent-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">
+                                Commercial
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="text-sm font-medium">100kW System</div>
+                            <div class="text-xs opacity-90">Abuja, Nigeria</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-semibold text-white mb-2">Office Complex Solar Array</h3>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                            Large-scale commercial installation powering a 20-story office building with grid-tie capabilities.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-400">
+                                <i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>
+                                Completed: Nov 2024
+                            </div>
+                            <a href="contact.html" class="text-primary-400 font-medium hover:underline text-sm">
+                                Get Similar Quote →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Industrial -->
+                <div class="project-card industrial bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-green-400 to-green-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">
+                                Industrial
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="text-sm font-medium">500kW System</div>
+                            <div class="text-xs opacity-90">Port Harcourt, Nigeria</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-semibold text-white mb-2">Manufacturing Plant Solar</h3>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                            Massive industrial solar installation reducing operational costs by 60% for a manufacturing facility.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-400">
+                                <i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>
+                                Completed: Oct 2024
+                            </div>
+                            <a href="contact.html" class="text-primary-400 font-medium hover:underline text-sm">
+                                Get Similar Quote →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 - Residential -->
+                <div class="project-card residential bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-purple-400 to-purple-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">
+                                Residential
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="text-sm font-medium">8kW System</div>
+                            <div class="text-xs opacity-90">Kano, Nigeria</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-semibold text-white mb-2">Suburban Home Solar Setup</h3>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                            Efficient residential system designed for a modest family home with optimal energy production.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-400">
+                                <i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>
+                                Completed: Sep 2024
+                            </div>
+                            <a href="contact.html" class="text-primary-400 font-medium hover:underline text-sm">
+                                Get Similar Quote →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - Commercial -->
+                <div class="project-card commercial bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-orange-400 to-orange-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">
+                                Commercial
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="text-sm font-medium">75kW System</div>
+                            <div class="text-xs opacity-90">Kaduna, Nigeria</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-semibold text-white mb-2">Shopping Mall Solar Installation</h3>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                            Commercial solar array for a busy shopping center, significantly reducing operational expenses.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-400">
+                                <i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>
+                                Completed: Aug 2024
+                            </div>
+                            <a href="contact.html" class="text-primary-400 font-medium hover:underline text-sm">
+                                Get Similar Quote →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 - Residential -->
+                <div class="project-card residential bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-teal-400 to-teal-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">
+                                Residential
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="text-sm font-medium">12kW System</div>
+                            <div class="text-xs opacity-90">Ibadan, Nigeria</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-semibold text-white mb-2">Family Duplex Solar System</h3>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                            Comprehensive solar solution for a two-story family home with energy storage capabilities.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-400">
+                                <i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>
+                                Completed: Jul 2024
+                            </div>
+                            <a href="contact.html" class="text-primary-400 font-medium hover:underline text-sm">
+                                Get Similar Quote →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- Project Statistics -->
+    <section class="py-16 lg:py-24 bg-primary-700">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    Our Impact by Numbers
+                </h2>
+                <p class="text-lg lg:text-xl text-primary-100 max-w-3xl mx-auto">
+                    Real results from our solar installations across Nigeria
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center text-white">
+                    <div class="text-4xl lg:text-5xl font-display font-bold mb-2">
+                        <span class="counter" data-target="500">0</span>+
+                    </div>
+                    <div class="text-primary-100 font-semibold mb-2">Projects Completed</div>
+                    <div class="text-primary-200 text-sm">Across Nigeria</div>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="text-center text-white">
+                    <div class="text-4xl lg:text-5xl font-display font-bold mb-2">
+                        <span class="counter" data-target="2500">0</span>kW
+                    </div>
+                    <div class="text-primary-100 font-semibold mb-2">Total Capacity</div>
+                    <div class="text-primary-200 text-sm">Solar Installed</div>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="text-center text-white">
+                    <div class="text-4xl lg:text-5xl font-display font-bold mb-2">
+                        <span class="counter" data-target="15000">0</span>+
+                    </div>
+                    <div class="text-primary-100 font-semibold mb-2">Tons CO₂ Saved</div>
+                    <div class="text-primary-200 text-sm">Environmental Impact</div>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="text-center text-white">
+                    <div class="text-4xl lg:text-5xl font-display font-bold mb-2">
+                        ₦<span class="counter" data-target="2">0</span>B+
+                    </div>
+                    <div class="text-primary-100 font-semibold mb-2">Customer Savings</div>
+                    <div class="text-primary-200 text-sm">In Electricity Bills</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Client Testimonials -->
+    <section class="py-16 lg:py-24 bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    What Our Clients Say
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Hear from satisfied customers across different project types
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-800 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="flex mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "Our manufacturing plant has seen a 60% reduction in electricity costs since QiTech installed our 500kW system. 
+                        The ROI exceeded our projections."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-900 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-400 font-semibold">NO</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-white">Nkem Okoro</div>
+                            <div class="text-gray-300 text-sm">Plant Manager, Port Harcourt</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-800 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="flex mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "The 15kW residential system has been flawless for over a year. Our electricity bills went from ₦45,000 to just ₦8,000 monthly."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-900 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-400 font-semibold">BA</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-white">Bola Adebayo</div>
+                            <div class="text-gray-300 text-sm">Homeowner, Lagos</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-800 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="flex mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "The commercial installation for our office complex was completed on time and within budget. 
+                        Professional service from start to finish."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-900 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-400 font-semibold">AU</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-white">Ahmed Usman</div>
+                            <div class="text-gray-300 text-sm">Facility Manager, Abuja</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="py-16 lg:py-24 bg-gray-800">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                Ready for Your Solar Project?
+            </h2>
+            <p class="text-lg lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join hundreds of satisfied customers who have transformed their energy consumption with our solar solutions. 
+                Get your custom quote today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="contact.html" class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                    Get Your Free Quote
+                </a>
+                <a href="services.html" class="px-8 py-4 border-2 border-primary-600 text-primary-400 font-semibold rounded-xl hover:bg-primary-900/20 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                    View Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="mb-4">
+                        <img src="Images/qids.png" alt="QiTech" class="h-8 lg:h-12 w-auto">
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Nigeria's premier solar energy company, delivering innovative renewable energy solutions across the country.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Facebook">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Twitter">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Services</a></li>
+                        <li><a href="projects.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Projects</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Residential Solar</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Commercial Solar</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Inverter Systems</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Maintenance</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-0.5 text-primary-400 flex-shrink-0"></i>
+                            <span class="text-gray-300">123 Energy Street, Victoria Island, Lagos, Nigeria</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-primary-400 flex-shrink-0"></i>
+                            <a href="tel:+2348012345678" class="text-gray-300 hover:text-primary-400 transition-colors">+234 801 234 5678</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-primary-400 flex-shrink-0"></i>
+                            <a href="mailto:info@qitech.ng" class="text-gray-300 hover:text-primary-400 transition-colors">info@qitech.ng</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="clock" class="w-5 h-5 mr-3 text-primary-400 flex-shrink-0"></i>
+                            <span class="text-gray-300">Mon-Fri: 8AM-6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 Quest Innovative Tech Limited. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Initialize everything -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Projects page loaded');
+            
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+/* QiTech Solar - Modern Solar Energy Company Styles */
+
+/* Base transition for all elements */
+* {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}
+
+/* Typography - Clean Modern Fonts */
+.font-display {
+    font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Base font size adjustments */
+body {
+    font-size: 14px;
+}
+
+h1 {
+    line-height: 1.1;
+}
+
+h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* Theme toggle button specific styles */
+#theme-toggle,
+#theme-toggle-mobile {
+    transition-property: background-color, border-color, transform, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+}
+
+#theme-toggle:hover,
+#theme-toggle-mobile:hover {
+    transform: scale(1.05);
+}
+
+#theme-toggle:active,
+#theme-toggle-mobile:active {
+    transform: scale(0.95);
+}
+
+/* Enhanced Lucide icon management */
+[data-lucide] {
+    stroke-width: 2;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Theme-specific icon visibility - Light mode: show moon, hide sun */
+html:not(.dark) [data-lucide="moon"] {
+    display: block !important;
+    opacity: 1;
+}
+
+html:not(.dark) [data-lucide="sun"] {
+    display: none !important;
+    opacity: 0;
+}
+
+/* Dark mode: show sun, hide moon */
+html.dark [data-lucide="sun"] {
+    display: block !important;
+    opacity: 1;
+}
+
+html.dark [data-lucide="moon"] {
+    display: none !important;
+    opacity: 0;
+}
+
+/* Solar-themed gradient backgrounds */
+.hero-background {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+}
+
+.dark .hero-background {
+    background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+}
+
+/* Service cards with subtle solar-themed styling */
+.service-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #eee324, #facc15);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(238, 227, 36, 0.1);
+    border-color: rgba(238, 227, 36, 0.2);
+}
+
+.dark .service-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: rgba(75, 85, 99, 0.8);
+}
+
+.dark .service-card:hover {
+    box-shadow: 0 20px 40px rgba(238, 227, 36, 0.15);
+    border-color: rgba(238, 227, 36, 0.3);
+}
+
+/* Icon containers with primary color theming */
+.icon-container {
+    background: rgba(238, 227, 36, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(238, 227, 36, 0.2);
+}
+
+.service-card:hover .icon-container {
+    background: rgba(238, 227, 36, 0.2);
+    transform: scale(1.1);
+}
+
+/* Project cards */
+.project-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(238, 227, 36, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.dark .project-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation styling */
+nav {
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
+
+/* Large logo adjustments */
+nav .flex-shrink-0 img {
+    max-height: 12rem; /* Ensure logo doesn't get too large on very wide screens */
+}
+
+@media (max-width: 1024px) {
+    nav .flex-shrink-0 img {
+        max-height: 9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav .flex-shrink-0 img {
+        height: 6rem !important; /* Smaller on mobile for better usability */
+    }
+    
+    nav .container > div {
+        height: 7rem !important; /* Adjust nav height on mobile */
+    }
+}
+
+/* Mobile menu */
+#mobile-menu {
+    backdrop-filter: blur(20px);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* Button styling with primary color */
+.btn-primary {
+    background: #eee324;
+    color: #0f172a;
+    border: none;
+    box-shadow: 0 4px 14px rgba(238, 227, 36, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    background: #facc15;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(238, 227, 36, 0.35);
+}
+
+/* Testimonial cards */
+.testimonial-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-color: rgba(238, 227, 36, 0.2);
+}
+
+.dark .testimonial-card {
+    background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+    border-color: rgba(75, 85, 99, 0.6);
+}
+
+.dark .testimonial-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border-color: rgba(238, 227, 36, 0.3);
+}
+
+/* Stats section */
+.stats-section .stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-section .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .stats-section .stat-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Floating animations */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    33% { 
+        transform: translateY(-10px) rotate(1deg); 
+    }
+    66% { 
+        transform: translateY(-5px) rotate(-1deg); 
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced fade in animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Counter animation styling */
+.counter {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+/* Custom scrollbar with primary color */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #eee324 0%, #facc15 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #eee324 0%, #facc15 100%);
+}
+
+/* Focus states with primary color */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #eee324;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Form styling */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #eee324;
+    outline-offset: 2px;
+    border-color: #eee324;
+    box-shadow: 0 0 0 3px rgba(238, 227, 36, 0.1);
+}
+
+/* Selection styling with primary color */
+::selection {
+    background-color: rgba(238, 227, 36, 0.3);
+    color: inherit;
+}
+
+/* Button hover effects */
+.hover-lift {
+    transition: transform 0.2s ease-out;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Star rating styling */
+[data-lucide="star"].fill-current {
+    fill: #eee324;
+    color: #eee324;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .service-card {
+        margin-bottom: 1rem;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    .stats-section .stat-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    /* Reduce font sizes further on mobile */
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.125rem !important;
+    }
+    
+    p {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Dark mode specific overrides */
+.dark {
+    color-scheme: dark;
+}
+
+/* Loading states */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Form field error states */
+.field-error {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .service-card,
+    .project-card,
+    .testimonial-card {
+        border: 2px solid currentColor;
+    }
+    
+    .icon-container {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Print styles */
+@media print {
+    nav,
+    footer,
+    #mobile-menu-button,
+    #mobile-menu,
+    #theme-toggle,
+    #theme-toggle-mobile {
+        display: none !important;
+    }
+    
+    * {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .service-card,
+    .project-card,
+    .testimonial-card {
+        border: 1px solid #ccc !important;
+        break-inside: avoid;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* Solar energy themed gradients */
+.solar-gradient {
+    background: linear-gradient(135deg, #eee324 0%, #facc15 50%, #fde047 100%);
+}
+
+.solar-gradient-subtle {
+    background: linear-gradient(135deg, rgba(238, 227, 36, 0.1) 0%, rgba(250, 204, 21, 0.05) 100%);
+}
+
+/* Energy efficiency indicators */
+.efficiency-indicator {
+    position: relative;
+    overflow: hidden;
+}
+
+.efficiency-indicator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(238, 227, 36, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* Solar panel grid pattern (subtle background) */
+.solar-pattern {
+    background-image: 
+        linear-gradient(rgba(238, 227, 36, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(238, 227, 36, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.dark .solar-pattern {
+    background-image: 
+        linear-gradient(rgba(238, 227, 36, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(238, 227, 36, 0.05) 1px, transparent 1px);
+}

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - QiTech | Solar & Inverter Solutions in Nigeria</title>
+    <meta name="description" content="Comprehensive solar energy services from QiTech: residential solar, commercial installations, inverter systems, and maintenance. Premium solutions for every need.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            500: '#eee324',
+                            600: '#d4c41f',
+                            700: '#b8a61c',
+                            800: '#9d8918',
+                            900: '#7a6a14',
+                        },
+                        accent: {
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-900 text-white">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700/20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
+                        <img src="Images/qids.png" alt="QiTech - Premier Solar Solutions" class="h-8 lg:h-12 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">About</a>
+                    <a href="services.html" class="text-white font-medium hover:text-primary-400 transition-colors">Services</a>
+                    <a href="projects.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">Projects</a>
+                    <a href="contact.html" class="text-gray-300 font-medium hover:text-primary-400 transition-colors">Contact</a>
+                </div>
+                
+                <!-- CTA -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="contact.html" class="px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                        Get Quote
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-3">
+                    <button
+                        id="mobile-menu-button"
+                        class="p-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                        aria-label="Toggle menu"
+                        title="Open menu"
+                    >
+                        <i data-lucide="menu" class="w-5 h-5 text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-gray-900 border-t border-gray-700">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">Home</a>
+                <a href="about.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">About</a>
+                <a href="services.html" class="block text-white font-medium py-2">Services</a>
+                <a href="projects.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">Projects</a>
+                <a href="contact.html" class="block text-gray-300 font-medium py-2 hover:text-primary-400 transition-colors">Contact</a>
+                <a href="contact.html" class="block w-full mt-4 px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg text-center transition-colors">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </nav>    
+    <!-- Hero Section -->
+    <section class="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-fade-in">
+                    <span class="text-white">Complete Solar</span>
+                    <span class="text-primary-400 block">Energy Solutions</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto font-light leading-relaxed animate-slide-up">
+                    From residential rooftops to large commercial installations, we provide comprehensive solar energy services 
+                    tailored to meet your specific power requirements and budget.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+                    <a href="contact.html" class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                        Get Free Quote
+                    </a>
+                    <a href="#services" class="px-8 py-4 border-2 border-primary-600 text-primary-400 font-semibold rounded-xl hover:bg-primary-900/20 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Overview -->
+    <section id="services" class="py-16 lg:py-24 bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    Our Services
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Professional solar energy solutions designed to power your life with clean, renewable energy
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Residential Solar -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center">
+                                <i data-lucide="home" class="w-8 h-8 text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-white mb-4">Residential Solar</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Transform your home with custom solar panel installations designed to reduce your electricity bills 
+                            by up to 90% while increasing your property value.
+                        </p>
+                        <ul class="space-y-2 text-gray-300 mb-6">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Custom system design & sizing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Premium solar panels & equipment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Professional installation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">25-year warranty coverage</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-flex items-center text-primary-400 font-medium hover:underline">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Commercial Solar -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1519987210-a5c2e5b8c88b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center">
+                                <i data-lucide="building-2" class="w-8 h-8 text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-white mb-4">Commercial Solar</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Scale your business with enterprise-grade solar installations that deliver exceptional ROI 
+                            and demonstrate your commitment to sustainability.
+                        </p>
+                        <ul class="space-y-2 text-gray-300 mb-6">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Large-scale system design</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Commercial-grade equipment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Financing options available</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Performance monitoring</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-flex items-center text-primary-400 font-medium hover:underline">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Inverter Systems -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center">
+                                <i data-lucide="battery" class="w-8 h-8 text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-white mb-4">Inverter Systems</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            High-quality inverters and battery storage solutions to ensure uninterrupted power supply 
+                            and maximize your energy independence.
+                        </p>
+                        <ul class="space-y-2 text-gray-300 mb-6">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Pure sine wave inverters</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Lithium battery storage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Smart monitoring systems</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-primary-500 mr-2 flex-shrink-0"></i>
+                                <span class="text-sm">Automatic backup switching</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-flex items-center text-primary-400 font-medium hover:underline">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- Additional Services -->
+    <section class="py-16 lg:py-24 bg-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    Additional Services
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Comprehensive support to ensure your solar investment delivers maximum value
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Maintenance -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="wrench" class="w-6 h-6 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-semibold text-white mb-3">Maintenance & Support</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Regular maintenance and 24/7 technical support to keep your system running optimally.
+                    </p>
+                </div>
+                
+                <!-- Consultation -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="lightbulb" class="w-6 h-6 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-semibold text-white mb-3">Energy Consultation</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Expert energy audits and recommendations to optimize your power consumption.
+                    </p>
+                </div>
+                
+                <!-- Financing -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="credit-card" class="w-6 h-6 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-semibold text-white mb-3">Flexible Financing</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Multiple payment options and financing plans to make solar accessible.
+                    </p>
+                </div>
+                
+                <!-- Monitoring -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="activity" class="w-6 h-6 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-semibold text-white mb-3">System Monitoring</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Real-time monitoring apps to track your system's performance and savings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Process -->
+    <section class="py-16 lg:py-24 bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    Our Installation Process
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                    A streamlined approach that ensures quality installation with minimal disruption
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-xl font-bold">1</span>
+                        </div>
+                        <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-700"></div>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-white mb-3">Site Assessment</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Our experts evaluate your property to design the optimal solar system for your needs.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-xl font-bold">2</span>
+                        </div>
+                        <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-700"></div>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-white mb-3">Custom Design</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        We create a detailed system design and provide you with projected savings calculations.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-xl font-bold">3</span>
+                        </div>
+                        <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-700"></div>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-white mb-3">Professional Installation</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Our certified technicians install your system efficiently with minimal disruption.
+                    </p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-white mb-3">Activation & Monitoring</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        We activate your system and set up monitoring so you can track your energy production.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="py-16 lg:py-24 bg-primary-700">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    Why Choose Solar?
+                </h2>
+                <p class="text-lg lg:text-xl text-primary-100 max-w-3xl mx-auto">
+                    Discover the compelling benefits of switching to solar energy
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="text-center text-white">
+                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="trending-down" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4">Reduce Energy Bills</h3>
+                    <p class="text-primary-100 leading-relaxed">
+                        Cut your electricity costs by up to 90% and protect yourself from rising energy prices.
+                    </p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="text-center text-white">
+                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="leaf" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4">Environmental Impact</h3>
+                    <p class="text-primary-100 leading-relaxed">
+                        Reduce your carbon footprint and contribute to a cleaner, more sustainable Nigeria.
+                    </p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="text-center text-white">
+                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="home" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4">Increase Property Value</h3>
+                    <p class="text-primary-100 leading-relaxed">
+                        Solar installations typically increase property values by 3-4% on average.
+                    </p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="text-center text-white">
+                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="zap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4">Energy Independence</h3>
+                    <p class="text-primary-100 leading-relaxed">
+                        Generate your own clean electricity and reduce dependence on the grid.
+                    </p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="text-center text-white">
+                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shield" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4">Reliable Power</h3>
+                    <p class="text-primary-100 leading-relaxed">
+                        Enjoy consistent power supply with minimal maintenance requirements.
+                    </p>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="text-center text-white">
+                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="trending-up" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-4">Long-term ROI</h3>
+                    <p class="text-primary-100 leading-relaxed">
+                        Systems typically pay for themselves within 3-5 years with 25+ year lifespans.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- Call to Action -->
+    <section class="py-16 lg:py-24 bg-gray-800">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                Ready to Start Your Solar Journey?
+            </h2>
+            <p class="text-lg lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Get a free, no-obligation consultation and discover how much you can save with solar energy.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="contact.html" class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                    Get Free Quote
+                </a>
+                <a href="tel:+2348012345678" class="px-8 py-4 border-2 border-primary-600 text-primary-400 font-semibold rounded-xl hover:bg-primary-900/20 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                    Call: 080-1234-5678
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="mb-4">
+                        <img src="Images/qids.png" alt="QiTech" class="h-8 lg:h-12 w-auto">
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Nigeria's premier solar energy company, delivering innovative renewable energy solutions across the country.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Facebook">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Twitter">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Services</a></li>
+                        <li><a href="projects.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Projects</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Residential Solar</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Commercial Solar</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Inverter Systems</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Maintenance</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-0.5 text-primary-400 flex-shrink-0"></i>
+                            <span class="text-gray-300">123 Energy Street, Victoria Island, Lagos, Nigeria</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-primary-400 flex-shrink-0"></i>
+                            <a href="tel:+2348012345678" class="text-gray-300 hover:text-primary-400 transition-colors">+234 801 234 5678</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-primary-400 flex-shrink-0"></i>
+                            <a href="mailto:info@qitech.ng" class="text-gray-300 hover:text-primary-400 transition-colors">info@qitech.ng</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="clock" class="w-5 h-5 mr-3 text-primary-400 flex-shrink-0"></i>
+                            <span class="text-gray-300">Mon-Fri: 8AM-6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 Quest Innovative Tech Limited. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Initialize everything -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Services page loaded');
+            
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

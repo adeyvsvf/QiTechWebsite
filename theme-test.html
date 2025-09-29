@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QiTech - Theme Toggle Test</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            500: '#eee324',
+                            600: '#d4c41f',
+                            700: '#b8a61c',
+                            800: '#9d8918',
+                            900: '#7a6a14',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-900 text-white min-h-screen">
+    
+    <div class="container mx-auto px-6 py-12 max-w-4xl">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white mb-4">
+                QiTech Theme Toggle Test
+            </h1>
+            <p class="text-lg text-gray-300">
+                Test page to verify light/dark mode functionality
+            </p>
+        </div>
+
+        <!-- Dark Mode Notice -->
+        <div class="bg-gray-800 rounded-2xl p-8 mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Dark Mode Only</h2>
+            <p class="text-gray-300">This website now uses dark mode exclusively. Theme toggle functionality has been removed.</p>
+        </div>
+
+        <!-- Status Display -->
+        <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Current Status</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-medium mb-3">Theme Information</h3>
+                    <div class="space-y-2 text-sm">
+                        <div>Current Theme: <span class="font-mono bg-gray-700 px-2 py-1 rounded">Dark (Fixed)</span></div>
+                        <div>HTML Classes: <span class="font-mono bg-gray-700 px-2 py-1 rounded">scroll-smooth dark</span></div>
+                        <div>LocalStorage: <span class="font-mono bg-gray-700 px-2 py-1 rounded">N/A</span></div>
+                        <div>System Preference: <span class="font-mono bg-gray-700 px-2 py-1 rounded">Overridden</span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium mb-3">Theme Toggle Status</h3>
+                    <div class="space-y-2 text-sm">
+                        <div>Desktop Toggle: <span class="font-mono bg-gray-700 px-2 py-1 rounded">Removed</span></div>
+                        <div>Mobile Toggle: <span class="font-mono bg-gray-700 px-2 py-1 rounded">Removed</span></div>
+                        <div>Light Mode: <span class="font-mono bg-gray-700 px-2 py-1 rounded">Disabled</span></div>
+                        <div>Dark Mode: <span class="font-mono bg-gray-700 px-2 py-1 rounded">Always Active</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Test Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="moon" class="w-6 h-6 text-primary-400"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Dark Theme Only</h3>
+                <p class="text-gray-300 text-sm">This card now uses dark backgrounds exclusively.</p>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="check" class="w-6 h-6 text-primary-400"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Consistent Design</h3>
+                <p class="text-gray-300 text-sm">All pages now maintain a consistent dark appearance.</p>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="zap" class="w-6 h-6 text-primary-400"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Simplified Code</h3>
+                <p class="text-gray-300 text-sm">Theme toggle functionality has been removed for cleaner code.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Link -->
+        <div class="text-center">
+            <a href="index.html" class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+                <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+                Back to Homepage
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Simple page initialization for dark mode only
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Theme test page loaded - Dark mode only');
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
