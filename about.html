@@ -417,14 +417,65 @@
         </div>
     </section>
     
-    <!-- Call to Action -->
+    <!-- Resources & Downloads Section -->
     <section class="py-16 lg:py-24 bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    Resources & Downloads
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Access comprehensive information about QiTech's services, products, and solar energy solutions.
+                    Download our documents to learn more about how we can power your future.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Company Profile -->
+                <div class="bg-gray-800 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-700">
+                    <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="building-2" class="w-8 h-8 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-semibold text-white mb-3">Company Profile</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Comprehensive overview of QiTech's history, capabilities, projects, and commitment to delivering
+                        premium solar solutions across Nigeria.
+                    </p>
+                    <button onclick="openPdfViewer('Documents/QitechProfile2025.pdf', 'Company Profile')"
+                       class="flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        View Document
+                    </button>
+                </div>
+
+                <!-- Client Education Pack -->
+                <div class="bg-gray-800 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-700">
+                    <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="book-open" class="w-8 h-8 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-semibold text-white mb-3">Client Education Pack</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Essential guide to understanding solar energy systems, benefits, maintenance tips, and how to
+                        maximize your investment in renewable energy.
+                    </p>
+                    <button onclick="openPdfViewer('Documents/QiTech-ClientEducationPack.pdf', 'Client Education Pack')"
+                       class="flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        View Document
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 lg:py-24 bg-gray-800">
         <div class="container mx-auto px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
                 Ready to Join Our Solar Revolution?
             </h2>
             <p class="text-lg lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Let us help you harness the power of the sun for a cleaner, more sustainable future. 
+                Let us help you harness the power of the sun for a cleaner, more sustainable future.
                 Get your free consultation today.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -438,6 +489,23 @@
         </div>
     </section>
     
+    <!-- PDF Viewer Modal -->
+    <div id="pdfViewerModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8" style="backdrop-filter: blur(8px); background-color: rgba(0, 0, 0, 0.75);">
+        <div class="relative w-full h-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-6 py-3 bg-white border-b border-gray-200">
+                <h3 id="pdfViewerTitle" class="text-lg font-semibold text-gray-900"></h3>
+                <button onclick="closePdfViewer()" class="p-1.5 hover:bg-gray-100 rounded-full transition-colors group" aria-label="Close">
+                    <i data-lucide="x" class="w-5 h-5 text-gray-500 group-hover:text-gray-700"></i>
+                </button>
+            </div>
+            <!-- PDF Iframe -->
+            <div class="flex-1 overflow-hidden bg-gray-100">
+                <iframe id="pdfViewerFrame" class="w-full h-full bg-white" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-black text-white py-16">
         <div class="container mx-auto px-6 lg:px-8">
@@ -532,16 +600,62 @@
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
     
+    <!-- PDF Viewer Functions -->
+    <script>
+        // Open PDF in modal overlay
+        function openPdfViewer(pdfPath, title) {
+            const modal = document.getElementById('pdfViewerModal');
+            const iframe = document.getElementById('pdfViewerFrame');
+            const titleElement = document.getElementById('pdfViewerTitle');
+
+            titleElement.textContent = title;
+            iframe.src = pdfPath + '#toolbar=0&navpanes=0&scrollbar=0';
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            // Reinitialize icons
+            setTimeout(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }, 50);
+        }
+
+        // Close PDF viewer modal
+        function closePdfViewer() {
+            const modal = document.getElementById('pdfViewerModal');
+            const iframe = document.getElementById('pdfViewerFrame');
+
+            modal.classList.add('hidden');
+            iframe.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePdfViewer();
+            }
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('pdfViewerModal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePdfViewer();
+            }
+        });
+    </script>
+
     <!-- Initialize everything -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             console.log('About page loaded');
-            
+
             if (window.lucide) {
                 window.lucide.createIcons();
             }
         });
-        
+
         window.addEventListener('load', function() {
             if (window.lucide) {
                 window.lucide.createIcons();
