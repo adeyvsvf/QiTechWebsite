@@ -1,0 +1,14 @@
+AuthType Basic
+AuthName "QiTech Website - Access Restricted"
+AuthUserFile /home/yourusername/public_html/site/.htpasswd
+Require valid-user
+
+# Prevent directory listing
+Options -Indexes
+
+# Enable following symbolic links
+Options +FollowSymLinks
+
+# Error documents
+ErrorDocument 401 "Authorization Required"
+ErrorDocument 403 "Forbidden"
