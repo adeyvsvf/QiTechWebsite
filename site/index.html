@@ -148,7 +148,9 @@
         <!-- Background with subtle pattern -->
         <div class="absolute inset-0 bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(238,227,36,0.1),transparent_50%)]"></div>
-        
+        <!-- Power lines overlay -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('../Images/pLinines.png');"></div>
+
         <!-- Content -->
         <div class="relative z-10 container mx-auto px-6 lg:px-8">
             <div class="max-w-5xl mx-auto text-center">
@@ -181,57 +183,62 @@
         <div class="absolute bottom-1/4 left-10 w-16 h-16 bg-primary-500/5 rounded-full animate-float" style="animation-delay: 2s;"></div>
     </section>
     <!-- Services Grid -->
-    <section class="py-16 lg:py-24 bg-dark-900">
-        <div class="container mx-auto px-6 lg:px-8">
+    <section class="relative py-16 lg:py-24 bg-dark-900">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('../Images/panel.jpg');"></div>
+        <!-- Subtle overlay for better readability -->
+        <div class="absolute inset-0 bg-dark-900/40"></div>
+
+        <div class="relative z-10 container mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-500 mb-6 drop-shadow-lg">
                     Complete Solar Solutions
                 </h2>
-                <p class="text-base lg:text-lg text-dark-300 max-w-3xl mx-auto">
-                    From residential solar panels to commercial power systems, we deliver premium energy solutions 
+                <p class="text-base lg:text-lg text-white max-w-3xl mx-auto drop-shadow-md">
+                    From residential solar panels to commercial power systems, we deliver premium energy solutions
                     tailored to Nigeria's unique power needs.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Solar Panels -->
-                <div class="group bg-dark-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-dark-700">
-                    <div class="w-16 h-16 bg-primary-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
-                        <i data-lucide="sun" class="w-8 h-8 text-primary-400"></i>
+                <div class="group bg-primary-50/90 backdrop-blur-sm rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-primary-100">
+                    <div class="w-16 h-16 bg-primary-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500/30 transition-colors">
+                        <i data-lucide="sun" class="w-8 h-8 text-primary-600"></i>
                     </div>
-                    <h3 class="text-lg font-display font-semibold text-white mb-4">Solar Panel Systems</h3>
-                    <p class="text-dark-300 leading-relaxed mb-4 text-sm">
+                    <h3 class="text-lg font-display font-semibold text-gray-900 mb-4">Solar Panel Systems</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-sm">
                         High-efficiency monocrystalline and polycrystalline solar panels designed for maximum performance in Nigerian climate conditions.
                     </p>
-                    <a href="services.html" class="text-primary-400 font-medium hover:underline inline-flex items-center">
+                    <a href="services.html" class="text-primary-600 font-medium hover:underline inline-flex items-center">
                         Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </a>
                 </div>
-                
+
                 <!-- Inverters -->
-                <div class="group bg-dark-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-dark-700">
-                    <div class="w-16 h-16 bg-primary-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
-                        <i data-lucide="cpu" class="w-8 h-8 text-primary-400"></i>
+                <div class="group bg-primary-50/90 backdrop-blur-sm rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-primary-100">
+                    <div class="w-16 h-16 bg-primary-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500/30 transition-colors">
+                        <i data-lucide="cpu" class="w-8 h-8 text-primary-600"></i>
                     </div>
-                    <h3 class="text-lg font-display font-semibold text-white mb-4">Power Inverters</h3>
-                    <p class="text-dark-300 leading-relaxed mb-4 text-sm">
+                    <h3 class="text-lg font-display font-semibold text-gray-900 mb-4">Power Inverters</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-sm">
                         Advanced MPPT and PWM inverters with pure sine wave output. From 1kVA to 100kVA systems for homes and businesses.
                     </p>
-                    <a href="services.html" class="text-primary-400 font-medium hover:underline inline-flex items-center">
+                    <a href="services.html" class="text-primary-600 font-medium hover:underline inline-flex items-center">
                         Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </a>
                 </div>
-                
+
                 <!-- Battery Storage -->
-                <div class="group bg-dark-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-dark-700">
-                    <div class="w-16 h-16 bg-primary-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
-                        <i data-lucide="battery" class="w-8 h-8 text-primary-400"></i>
+                <div class="group bg-primary-50/90 backdrop-blur-sm rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-primary-100">
+                    <div class="w-16 h-16 bg-primary-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500/30 transition-colors">
+                        <i data-lucide="battery" class="w-8 h-8 text-primary-600"></i>
                     </div>
-                    <h3 class="text-lg font-display font-semibold text-white mb-4">Battery Storage</h3>
-                    <p class="text-dark-300 leading-relaxed mb-4 text-sm">
+                    <h3 class="text-lg font-display font-semibold text-gray-900 mb-4">Battery Storage</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-sm">
                         Lithium-ion and AGM battery systems with intelligent BMS. Store solar energy for reliable 24/7 power supply.
                     </p>
-                    <a href="services.html" class="text-primary-400 font-medium hover:underline inline-flex items-center">
+                    <a href="services.html" class="text-primary-600 font-medium hover:underline inline-flex items-center">
                         Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </a>
                 </div>
@@ -292,49 +299,49 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-16 lg:py-24 bg-dark-900">
+    <section class="py-16 lg:py-24 bg-primary-50">
         <div class="container mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6">
                         Why Choose QiTech Solar?
                     </h2>
-                    <p class="text-base text-dark-300 mb-8 leading-relaxed">
-                        We're Nigeria's most trusted solar energy company, delivering cutting-edge technology 
+                    <p class="text-base text-gray-700 mb-8 leading-relaxed">
+                        We're Nigeria's most trusted solar energy company, delivering cutting-edge technology
                         with local expertise and world-class service.
                     </p>
-                    
+
                     <div class="space-y-6">
                         <!-- Feature 1 -->
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                <i data-lucide="shield-check" class="w-6 h-6 text-primary-400"></i>
+                            <div class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-primary-700"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-white mb-2">Premium Quality Equipment</h3>
-                                <p class="text-dark-300 text-sm">International-grade solar panels and inverters with 25-year warranties and proven performance.</p>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Premium Quality Equipment</h3>
+                                <p class="text-gray-700 text-sm">International-grade solar panels and inverters with 25-year warranties and proven performance.</p>
                             </div>
                         </div>
-                        
+
                         <!-- Feature 2 -->
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                <i data-lucide="users" class="w-6 h-6 text-primary-400"></i>
+                            <div class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i data-lucide="users" class="w-6 h-6 text-primary-700"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-white mb-2">Expert Installation Team</h3>
-                                <p class="text-dark-300 text-sm">Certified engineers and technicians with extensive experience in Nigerian solar installations.</p>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Expert Installation Team</h3>
+                                <p class="text-gray-700 text-sm">Certified engineers and technicians with extensive experience in Nigerian solar installations.</p>
                             </div>
                         </div>
-                        
+
                         <!-- Feature 3 -->
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                <i data-lucide="clock" class="w-6 h-6 text-primary-400"></i>
+                            <div class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6 text-primary-700"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-white mb-2">24/7 Support & Maintenance</h3>
-                                <p class="text-dark-300 text-sm">Round-the-clock technical support and comprehensive maintenance services nationwide.</p>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">24/7 Support & Maintenance</h3>
+                                <p class="text-gray-700 text-sm">Round-the-clock technical support and comprehensive maintenance services nationwide.</p>
                             </div>
                         </div>
                     </div>
