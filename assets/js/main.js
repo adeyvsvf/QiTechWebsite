@@ -269,15 +269,15 @@ class ProjectFilter {
 
     handleFilter(clickedButton) {
         const filter = clickedButton.dataset.filter;
-        
+
         // Update active button
         this.buttons.forEach(button => {
-            button.classList.remove('active', 'bg-primary-500', 'text-dark-900');
-            button.classList.add('bg-gray-100', 'dark:bg-dark-800', 'text-dark-600', 'dark:text-dark-300');
+            button.classList.remove('active', 'bg-primary-600');
+            button.classList.add('bg-gray-800', 'text-gray-300');
         });
-        
-        clickedButton.classList.remove('bg-gray-100', 'dark:bg-dark-800', 'text-dark-600', 'dark:text-dark-300');
-        clickedButton.classList.add('active', 'bg-primary-500', 'text-dark-900');
+
+        clickedButton.classList.remove('bg-gray-800', 'text-gray-300');
+        clickedButton.classList.add('active', 'bg-primary-600', 'text-white');
 
         // Filter projects with smooth animation
         const projectCards = this.grid.querySelectorAll('.project-card');
