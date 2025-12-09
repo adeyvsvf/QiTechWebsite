@@ -185,11 +185,11 @@ class ContactForm {
 
     async handleSubmit(e) {
         e.preventDefault();
-        
+
         // Validate all fields
         const inputs = this.form.querySelectorAll('input[required], select[required], textarea[required]');
         let isValid = true;
-        
+
         inputs.forEach(input => {
             if (!this.validateField(input)) {
                 isValid = false;
@@ -203,32 +203,46 @@ class ContactForm {
 
         // Show loading state
         const submitButton = this.form.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mr-2"></i>Sending...';
+        const buttonText = submitButton.querySelector('#button-text');
+        const originalText = buttonText.textContent;
+        buttonText.textContent = 'Sending...';
         submitButton.disabled = true;
 
-        // Simulate form submission (replace with actual API call)
+        // Submit form to Formspree
         try {
-            await this.submitForm();
-            this.showMessage('Thank you! Your solar consultation request has been submitted. We\'ll contact you within 24 hours to discuss your energy needs.', 'success');
-            this.form.reset();
-        } catch (error) {
-            this.showMessage('Sorry, there was an error submitting your request. Please try again or call us directly at +234 801 234 5678.', 'error');
-        } finally {
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-            // Re-initialize icons
-            if (window.lucide) {
-                window.lucide.createIcons();
-            }
-        }
-    }
+            const formData = new FormData(this.form);
+            const response = await fetch(this.form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-    async submitForm() {
-        // Simulate API call delay
-        return new Promise((resolve) => {
-            setTimeout(resolve, 2000);
-        });
+            if (response.ok) {
+                this.showMessage('Thank you for your interest in solar energy! We\'ve received your request and will contact you within 24 hours to discuss your personalized solar solution. Check your email for confirmation.', 'success');
+                this.form.reset();
+
+                // Scroll to success message
+                if (this.message) {
+                    this.message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            } else {
+                const data = await response.json();
+                if (data.errors) {
+                    const errorMessages = data.errors.map(error => error.message).join(', ');
+                    this.showMessage(`Error: ${errorMessages}`, 'error');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            this.showMessage('Sorry, there was an error submitting your request. Please try again or contact us directly at +234 814 941 4607 or info@qitechltd.com.', 'error');
+        } finally {
+            buttonText.textContent = originalText;
+            submitButton.disabled = false;
+        }
     }
 
     showMessage(text, type) {
