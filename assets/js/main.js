@@ -291,7 +291,7 @@ class ProjectFilter {
         });
 
         clickedButton.classList.remove('bg-gray-800', 'text-gray-300');
-        clickedButton.classList.add('active', 'bg-primary-600', 'text-white');
+        clickedButton.classList.add('active', 'bg-primary-600', 'text-black');
 
         // Filter projects with smooth animation
         const projectCards = this.grid.querySelectorAll('.project-card');
